@@ -1,0 +1,12 @@
+body{
+	color:#00f;
+	a{
+	color:#f00;
+	}
+}
+.row{
+	display:flex;
+	.col{
+		flex:1;
+	}	
+}
