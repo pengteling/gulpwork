@@ -69,8 +69,8 @@ gulp.task('html', function() {
 
 var uglify = require('gulp-uglify');
 gulp.task('js', function() {
-    return gulp.src('src/js/*.js')
-        .pipe(uglify())
+    return gulp.src('src/js/comm.js')
+        //.pipe(uglify())
         .pipe(gulp.dest('dist/js'))
         .pipe(browserSync.reload({
             stream: true
