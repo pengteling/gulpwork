@@ -46,6 +46,8 @@ if ($("#swiper0").length > 0) {
         spaceBetween: 30,
         autoHeight: true //enable auto height
     });
+
+
 }
 });
 
