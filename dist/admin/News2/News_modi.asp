@@ -80,10 +80,10 @@ function SetDropDownPic(url){
       <td colspan="2"><input name="title" type="text" class="input" value="<%=NewsRs("title")%>" size="30">
 		  </td>
     </tr>
-    <!-- <tr bgcolor="#ECF5FF">
+    <tr bgcolor="#ECF5FF">
       <td height="22" align="center" class="tr_southidc">产品编号：</td>
       <td colspan="2" width="80%"><input name="productNo" type="text" class="input" size="20" value="<%=NewsRs("productNo")%>"></td>
-    </tr> -->
+    </tr>
    
      <tr>
       <td  height="22" align="center" bgcolor="#C0C0C0" class="tr_southidc">所属类别：</td>

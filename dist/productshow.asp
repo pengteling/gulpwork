@@ -68,6 +68,7 @@ if not rs.eof then
 	catename= rs("catename")		
 	title=rs("title")
 	Com_Content=rs("content")
+  catepic = rs("defaultpicurl")
 
 else
 	response.write "网址传递参数有误"
@@ -84,141 +85,243 @@ rs.close
 <%
 curpagetitle = newstitle &"-"&curpagetitle
 %>
-<!--#include virtual="/product_top.asp"-->
+<!--#include virtual="/top.asp"-->
+<script src="http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=402912"></script>
+<div id="container">
+   
+    <div style="background:url(./images/bg_shu.png) no-repeat center; -moz-background-size:100% 100%;background-size:100% 100%;">
+       <div></div>
+      <div id="all_product"  >
+            
+          <div class="swiper-container" id="product_swiper-container">
+              <div class="swiper-wrapper">
+              
+<%
+rs.open "select * from product where cateid="&cateid&" order by elite desc,px desc,id desc",conn,1,1
+k=0
+while not rs.eof
+%>
+                  <div class="swiper-slide"  >
+                <img  id="product_img_<%=k%>" class="img_mask" onclick="window.location.href='?id=<%=rs("id")%>'" style="width:80%;margin-top:20px;" src="<%=rs("defaultpicurl")%>"></img>
+                <div class="title sansserif" style="color: #c7c9d5;text-overflow:ellipsis; white-space:nowrap; overflow:hidden;font-size:13px;"><%=rs("productNo")%></div>
+            </div>
 
+<%
+if newsid = rs("id") then
+  currentNo = k
+end if
+k=k+1
+rs.movenext
+wend
+rs.close
 
-<style>
-.jqzoom{
-	text-decoration:none;
-	float:left;
-	z-index:999;
-}
-</style>
-<script>
-$(document).ready(function() {
-	$('.jqzoom').jqzoom({
-            zoomType: 'standard',
-            lens:true,
-            preloadImages: false,
-            alwaysOn:false,
-			position:'right'
-        });
-	
-});
-</script>
-<div class="width" id="position">您所在的位置：<%=menustr%> > <%=newstitle%></div>
-<div class="width">
-  <div id="goodsshow" class="">
-    <div class="left">
-      <div class="shop_big"><a href="<%=uploadfiles(0)%>" class="jqzoom" rel='gal1' title="<%=newstitle%>" ><img src="<%=uploadfiles(0)%>" width="350" height="350" id="shop_big" alt="<%=newstitle%>" title="<%=newstitle%>" /></a>
-        <div class="clear"></div>
+%>
+              
+
+                  
+              
+                  
+              </div>
+   
+          </div>
       </div>
-      <div class="shop_plist"> <a href="javascript:;" class="prev"></a>
-        <div id="prolist">
-          <ul>
-            <%
-						for i = 0 to ubound(uploadfiles)-1
-						%>
-            <li <%if i=0 then response.write "class=""hover"""%>><a href="javascript:void(0);" rel="{gallery: 'gal1', smallimage: '<%=uploadfiles(i)%>',largeimage: '<%=uploadfiles(i)%>'}"><img src="<%=uploadfiles(i)%>" border="0" /></a></li>
-            <%
-							 next
-							 %>
-          </ul>
-        </div>
-        <a href="javascript:;" class="next"></a> </div>
-    </div>
-    <div class="right">
-      <h1 style="margin-bottom:30px;"><%=newstitle%></h1>
+      <div class="img_mask" style=" width:100%;border-bottom:1px solid #3f4a68; margin-top:22px; text-align: center" ></div>  
       
-      <div class="pricebox">
-      <div class="line1">
-      <div class="fl">促销价</div>
-      <div class="fr pricered">￥ <%=price%></div>
-      <div class="fr2"></div>
-      </div>
-       
-       <div class="line2">
-       
-       <div class="fl">价格</div>
-       <div class="fr">￥ <del><%=price_yuan%></del> <%=price_now%>元/<%=guige%></div>
-       </div>
-       
-        <div class="clear"></div>
+      <div style="margin-top:20px;margin-bottom:30px; text-align: center"><img height="28" src="<%=catepic%>"/></div>
+      
+      <div id="show_product">
+            
+          <div class="swiper-container" id="show_swiper-container">
+              <div class="swiper-wrapper">
+                <%
+                for i=0 to ubound(uploadfiles)-1
+                %>
+                  <div class="swiper-slide" style="text-align: center;"><img style="width:50%; " src="<%=uploadfiles(i)%>"></img></div>
+                <%
+                next
+                %>
+              </div>
+              
+                <!-- Add Arrows -->
+              <div style="margin-top:-70px;">
+              <div class="swiper-button-next" style="float:right;position:relative;    width: 13px;height: 22px;background-size:12px 22px;" ></div>
+              <div class="swiper-button-prev" style="float:left;position:relative;width: 13px;height: 22px;background-size:12px 22px;" ></div>
+              </div>
+              <!-- Add Pagination -->
+              <div class="swiper-pagination" style="margin-top:80px;position:relative;"></div>
+              <div style="color:#ffffff;font-size:18px; text-align: center"><%=productNo%></div>
+
+          </div>
       </div>
       
-      <div class="gline">
-        <div class="fl">品  名：</div>
-        <div class="fr"><%=pinming%></div>
-        <div class="clear"></div>
-      </div>
+      <%=pingji%>
       
-      <div class="gline">
-        <div class="fl">产  地：</div>
-        <div class="fr"><%=chandi%></div>
-        <div class="clear"></div>
-      </div>
+      <!-- <div class="function_div" style="margin-top:50px;height:150px;padding-bottom:50px;">
+        <ul style="padding-left:15%;color:white;">
+           
+           <li class="text_column_1" style="text-align:left;height:50px;line-height: 50px;font-size:15px;"><img style="width:30px;margin-right:5px;vertical-align:middle;" src="http://7xodmp.com1.z0.glb.clouddn.com/01e045f0-1c10-4686-a70c-0a33103d2b8d.png"></img>热力按需调配</li>
       
-      <div class="gline">
-        <div class="fl">规  格：</div>
-        <div class="fr"><%=guige%></div>
-        <div class="clear"></div>
-      </div>
-      <div class="gline">
-        <div class="fl">评  级：</div>
-        <div class="fr"><%=pingji%></div>
-        <div class="clear"></div>
-      </div>
-    
-    
-    <div class="zybox">
-    <%=content_zy%>
-    </div>
-     
-    
-    </div>
-    
-    <div class="right2">
-    
-    
-     <div class="im-3">
-      <div class="hd">
-        <ul>
+            
+           <li class="text_column_1" style="text-align:left;height:50px;line-height: 50px;font-size:15px;"><img style="width:30px;margin-right:5px;vertical-align:middle;" src="http://7xodmp.com1.z0.glb.clouddn.com/04ec0f25-c8a0-44f2-b17a-700aba86936d.png"></img>系统效率更优化</li>
+      
+            
+           <li class="text_column_1" style="text-align:left;height:50px;line-height: 50px;font-size:15px;"><img style="width:30px;margin-right:5px;vertical-align:middle;" src="http://7xodmp.com1.z0.glb.clouddn.com/cfae1ba5-5b5e-4c82-a43d-6de771173853.png"></img>费用更省</li>
+      
+            
         </ul>
-      </div>
-      <div class="bd">
-        <ul>
-        
-         <%
-		rs.open "Select top 5 * from product where cateid="&cateid&" and id<>"&newsid&" order by px desc,posttime desc",conn,1,1
-		while not rs.eof
-		%>
-        
-           <li><a href="productshow.asp?id=<%=rs("id")%>"><img src="/images/blank.gif" _src="<%=rs("defaultpicurl")%>" alt="" /></a><span class="ptit"><%=leftstr(rs("title"),30)%></span></li>
-         <%
-		 rs.movenext
-		 wend
-		 rs.close
-		 %>
-         
-       
+      </div> -->
+      
+    </div>
+    <div style="background-color:#1d293f;height:50px;line-height: 50px; font-size: 18px; text-align: center;" id="product_detail_title">
+       <div id="product_detail_btn" style="float:left;width:33%;color:#ffffff;"> 产品详情<div style="margin:0 auto;height:2px;width:50%;background-color:#266ff2;"></div> </div>
+       <div id="product_para_btn" style="float:left;width:33%;color:#8d949e;"> 产品参数<div class="displayNone" style="margin:0 auto;height:2px;width:50%;background-color:#266ff2;"></div></div> 
+       <div id="product_store_btn" style="float:left;width:33%;color:#8d949e;">分享</div>
+ 
+    </div>
+    <!-- <div class="product_detail">
           
-        </ul>
-      </div>
-      <!--<div class="prev"></div>-->
-      <div class="next"></div>
-    </div>
-   
-   
+         
     
+            
+    </div> -->
+     <%=news_content%>
+    
+    <div class="product_para displayNone" >
+      
     </div>
-    <div class="clear"></div>
-  </div>
-</div>
-<div class="width" id="cpxj">
-<div class="box">
-<div class="cpxj-tit"></div>
-<div class="con"><%=News_Content%></div>
-</div>
-</div>
+    <div class="product_para">
+<%=guige%>
 
-<!--#include virtual="/product_foot.asp"-->
+</div>
+  </div>
+  
+  <div class="clear"></div>
+
+
+
+<script>
+  window._bd_share_config = {
+    common : {
+      bdText : '产品详情',  
+      bdDesc : '产品详情',  
+      bdUrl : window.location.href,   
+      bdPic : ''
+    },
+    share : [{
+      "bdSize" : 16
+    }],
+    selectShare : [{
+      "bdselectMiniList" : ['qzone','tqq','kaixin001','bdxc','tqf']
+    }]
+  }
+  var swiper1 = new Swiper('#product_swiper-container', {
+      
+        slidesPerView: 3,
+        paginationClickable: true,
+        spaceBetween: 30,
+ 
+        freeMode: true
+    });    
+      var swiper = new Swiper('#show_swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+      nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 30,
+        autoHeight: true, //enable auto height
+    });   
+    var share_show_click = 0;
+  $(document).ready(function(){ 
+      
+  
+ 
+    $("#product_store_btn").click(function(){
+      $(".share_top_div").removeClass("displayNone");
+      share_show_click = 1;
+    });
+    $("#share_cancle").click(function(){
+      share_show = 0;
+      $(".share_top_div").addClass("displayNone");
+    });
+     
+      bodyclick = document.getElementsByTagName('body').item(0);
+ 
+      bodyclick.onclick = function(){
+        if(share_show_click != 1){
+          $(".share_top_div").addClass("displayNone");
+          share_show = 0;
+        }
+        share_show_click = 0;
+      };
+      
+    swiper1.slideTo(<%=currentNo%>,0); //跳转到第几
+     $("#product_img_<%=currentNo%>").removeClass("img_mask");
+  
+    $("#product_detail_btn").click(function(){
+      $(".product_detail").removeClass("displayNone");
+      $("#product_detail_btn div").removeClass("displayNone");
+      $(".product_para").addClass("displayNone");
+      $("#product_para_btn div").addClass("displayNone");
+      
+      $("#product_detail_btn").css('color','#ffffff');
+      $("#product_para_btn").css('color','#8d949e');
+    });
+
+    $("#product_para_btn").click(function(){
+      $(".product_detail").addClass("displayNone");
+      $("#product_detail_btn div").addClass("displayNone");
+      $(".product_para").removeClass("displayNone");
+      $("#product_para_btn div").removeClass("displayNone");
+      
+      $("#product_detail_btn").css('color','#8d949e');
+      $("#product_para_btn").css('color','#ffffff');
+    });
+    
+
+    
+    $("#product_ul li").each(function(){
+      $(this).click(function(){
+         
+        window.location = $(this).find(".url").text();
+        //window.location = "";
+      });
+    });
+
+    
+    
+    $(".product_para table").css("border","solid 1px #3B4151");
+    $(".product_para table").css("width","100%");
+    $(".product_para table").css("font-size","15px");
+    
+    $(".product_para table td").css("border","solid 1px #3B4151");
+    $(".product_para table td").css("height","50px");
+     
+    $(".product_para table").css("color","#ffffff"); 
+    
+    var title = $("#product_detail_title");
+    var titleY = title.offset().top;
+    window.onscroll = function() {
+    var top = document.documentElement.scrollTop || document.body.scrollTop;
+    top+=37;
+     
+    if (top > titleY) {
+      title.addClass("product_detail_title_css");
+       
+     
+    } else {
+      title.removeClass("product_detail_title_css");
+    }
+  }
+});
+
+
+  function gotoProduct(cat, id){
+    window.location = "./product.jsp?category="+cat+"&product_id=" + id;
+  }
+ 
+
+ </script>
+<!--#include virtual="/blink.asp"-->
+<!--#include virtual="/foot_p.asp"-->
+
+

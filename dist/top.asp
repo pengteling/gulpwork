@@ -11,7 +11,7 @@
   	<meta name="apple-mobile-web-app-capable" content="no">
   	<meta name="apple-mobile-web-app-status-bar-style" content="black">
   	<link rel="stylesheet" href="css/swiper.min.css">
-	<link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" href="css/custom.css?121">
 	<script src="js/jquery.min.js"></script>
 	<script src="js/swiper.min.js"></script>
 	<script src="js/comm.js"></script>	
@@ -103,7 +103,5 @@
     </div>
 
 </header>	
+<div class="head"></div>
 
-<%if isindex<>1 then%>
-<div class="neiyesubtit"><%=catename%></div>
-<%end if%>

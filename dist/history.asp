@@ -3,6 +3,7 @@
 <!--#include file="FiveInc/page.asp"-->
 <%
 nid=strToNum(Request.QueryString("id"))
+nid=30
 rs.open "select * from category where cateid="&nid,conn,1,1
 if not rs.eof then
 	cateid=rs("cateid")
@@ -172,5 +173,16 @@ rs.close
 		</section>
   
 
+<!--#include virtual="/blink.asp"-->
+
+
 
 <!--#include virtual="/foot.asp"-->
+<footer class="footer1">
+			<ul>
+				<li><a class="footer_curr"  href="history.asp">142年历程</a></li>
+				<li><a href="brand.asp">品牌介绍</a></li>
+				<li><a href="culture.asp">企业文化</a></li>
+				<li><a style="border-right: 0px;" href="activity.asp">企业活动</a></li>
+			</ul>
+		</footer>
