@@ -79,25 +79,22 @@ rs.close
 <!--#include virtual="/top.asp"-->
 
   <div class="nmain">
-    <div class="cleft fl"> 
-      <!--#include virtual="/cleft.asp"--> 
-    </div>
-    <div class="cright fr">
+ 
       
         <div class="maincontent" >
           <div class="newscenter">
             <h1 class="newscentertitle"><%=newstitle%></h1>
-            <!-- <div class="laiyuan">
-              <div class="author">日期：<%=posttime%> 来源：<%=author%> 点击：<%=hits%></div>
-            </div> -->
+            <div class="laiyuan">
+              <div class="author"><%=posttime%></div>
+            </div>
           </div>
           <div class="newscontent">
             <%=News_Content%>
           </div>
         </div>
       </div>
-       <div class="clear"></div>
-    </div>
+       
+   
    
   </div>
 

@@ -384,6 +384,7 @@ If data(3,i)>1 then class_list=class_list& "├"
       <td class="tr_southidc"><select name="modeltype" id="modeltype">       
           <option value="0" <%if modeltype=0 then response.write "selected"%>>信息模型</option>
           <option value="1" <%if modeltype=1 then response.write "selected"%>>产品模型</option>             
+          <option value="2" <%if modeltype=2 then response.write "selected"%>>案例模型</option>
         </select></td>
     </tr>
     <tr id="LinkUrl" <%if catetype<>3 then%>style="display:none;"<%end if%>>

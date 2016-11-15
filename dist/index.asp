@@ -55,6 +55,7 @@ cateid_d1=0
 	<div class="swiper-container" id="swiper4">
         <div class="swiper-wrapper">
             <div class="swiper-slide"><a href=""><img src="images/banner4-1.jpg" alt=""></a></div>                   
+            <div class="swiper-slide"><a href="http://www.tudou.com/programs/view/html5embed.action?type=0&code=ToWTRMV7Eag&lcode=&resourceId=0_06_05_99"><img src="images/banner4-2.jpg" alt=""></a></div>                   
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination swiper-pagination-white" id="swiper-pagination_4"></div>

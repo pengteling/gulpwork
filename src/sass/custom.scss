@@ -508,7 +508,7 @@ background:#01071c;
     bottom: 0px;
     /* border-top: 1px solid #CFCFCF; */
     z-index: 100;
-	
+    max-width: 750px;	
 }
 .footer1 ul li{
 	width: 25%;
@@ -564,7 +564,7 @@ background:#01071c;
 .business_activityContent p {
 	line-height: 22px;
 	text-align: left;
-	font-size: 0.14rem !important;
+	font-size: 0.18rem !important;
 	padding-bottom: 0.17rem !important;
 }
 
@@ -583,7 +583,7 @@ background:#01071c;
 .business_activityNav a span {
 	display: block;
 	line-height: 16px;
-	font-size: 0.12rem !important;
+	font-size: 0.18rem !important;
 }
 
 .historyBox h2 {
@@ -641,4 +641,80 @@ background:#01071c;
 .contentBox {
     background: #1a2031;
     padding:0.17rem;
+}
+
+.historyBox h2 {
+	font-size:0.18rem;
+    text-align: left;
+    color: #2d71ed;
+    line-height: 0.22rem;
+    padding-bottom: 0.17rem !important;
+}
+em {
+    font-style: normal;
+}
+.navContent, .costBox, .historyBox {
+    color: #fff;
+}
+
+.navContent {
+    display: none;
+}
+
+/* newslist */
+ul.newslist{
+	li.newsitem{
+		width: 100%;		
+		height: 2.72rem;
+		padding: 0.32rem 0.26rem;
+		border-top:#2c354d 1px solid;
+		img{
+			float: left;
+			width:3.21rem;
+			height: 2.2rem;
+			margin-right: 0.34rem;
+		}
+		h2{
+			font-size: 0.3rem;
+			color: #fff;
+			line-height: 0.48rem;
+			display: block;
+			height: 1.75rem;
+			padding-top: 0.2rem;
+			&.smalltit{
+				height: 1.39rem;	
+			}
+		}
+		em{
+			font-size: 0.24rem;
+			color: #676d80;			
+		}
+	}
+}
+.maincontent{
+	border-top:#2c354d 1px solid;
+	.newscentertitle{
+		padding-top: 0.2rem;
+		font-size: 0.24rem;
+		color: #fff;
+		line-height: 0.64rem;
+		text-align: center;
+	}
+	.laiyuan{
+		font-size: 0.24rem;
+		color:#676d80;
+		text-align: center;
+		padding-bottom: 0.2rem;
+		border-bottom:#2c354d 1px solid;
+	}
+}
+.newscontent{
+	padding:0.78rem 0.2rem;
+	img{
+		text-align:center;
+		margin:0 auto;
+		max-width: 100%;
+	}
+	font-size:0.24rem;
+	line-height:0.48rem;
 }
