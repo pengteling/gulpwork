@@ -178,18 +178,18 @@ rs.close
        <div id="product_store_btn" style="float:left;width:33%;color:#8d949e;">分享</div>
  
     </div>
-    <!-- <div class="product_detail">
+    <div class="product_detail">
           
-         
+         <%=news_content%>
     
             
-    </div> -->
-     <%=news_content%>
+    </div> 
+     
     
     <div class="product_para displayNone" >
       
     </div>
-    <div class="product_para">
+    <div class="product_para displayNone">
 <%=guige%>
 
 </div>
@@ -302,6 +302,8 @@ rs.close
     var titleY = title.offset().top;
     window.onscroll = function() {
     var top = document.documentElement.scrollTop || document.body.scrollTop;
+    console.log(top);
+    console.log(titleY);
     top+=37;
      
     if (top > titleY) {

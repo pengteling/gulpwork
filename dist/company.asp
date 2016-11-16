@@ -31,25 +31,25 @@ rs.close
 <!--#include virtual="/lmenu.asp"-->
 <!--#include virtual="/top.asp"-->
 
-<div class="nmain">
-  
-    
-    <div class="maincontent" > 
-    	
-      
-	
-	
-
-<div class="mcontent">
-	
-	  <%=Com_Content%>
-      
-   </div>    
-      
-      
-    </div>
-    </div>
-  
 
 
+    <div class="nmain">
+ 
+      
+        <div class="maincontent" >
+        <h1 class="comtitle"><%=Com_title%></h1>
+          
+          <div class="newscontent" style="color:#cccfd9;">
+             <%=Com_Content%>
+
+             
+          </div>
+        </div>
+      </div>
+       
+   
+   
+  </div>
+
+<!--#include virtual="/blink.asp"-->
 <!--#include virtual="/foot.asp"-->

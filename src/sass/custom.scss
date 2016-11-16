@@ -250,7 +250,7 @@ header{
 	z-index: 1;
 	width: 100%;
 	position: absolute;
-	top: 0.075rem;
+	top: 9px; /*让时间轴对齐*/
 	left: 0;
 }
 
@@ -418,7 +418,11 @@ border-bottom:#35405c 1px solid;
     top: 0.8rem;
     width: 100%;
 }
-
+.product_detail{
+	img{
+	width:100%;
+	}
+}
 
 .share_top_div{
 	position:fixed;
@@ -707,14 +711,92 @@ ul.newslist{
 		padding-bottom: 0.2rem;
 		border-bottom:#2c354d 1px solid;
 	}
+	h1.comtitle{
+		font-size: 0.26rem;
+		color: #fff;
+		text-align: center;
+		padding:0.8rem 0.2rem 0;
+	}
 }
 .newscontent{
 	padding:0.78rem 0.2rem;
+	p{
+		margin:0.2rem 0;
+	}
+	p.img{
+		text-align: center;
+
+		span{
+			display: block;
+			padding:0.14rem 0;
+			text-align: center;
+			font-size: 0.14rem;
+			line-height: 0.24rem;
+		}
+	}
 	img{
 		text-align:center;
-		margin:0 auto;
+		margin:0.12rem auto;
 		max-width: 100%;
 	}
 	font-size:0.24rem;
 	line-height:0.48rem;
+	color:#fff;
+}
+
+img{
+	vertical-align: middle; 
+}
+
+.subNav a i {
+    float: right;
+    margin-right: 0.17rem;
+}
+.contraction {
+    background: url(../images/arrow_down.png) top center no-repeat;
+    background-size: contain;
+    margin-top: 0.14rem;
+    width: 0.22rem;
+    height: 0.22rem;
+    text-indent: -10000px;
+}
+
+.accordion li.open i.contraction {
+    background: url(../images/arrow_up.png) top center no-repeat;
+    background-size: contain;
+    margin-top: 0.14rem;
+     width: 0.22rem;
+    height: 0.22rem;
+}
+.business_activityNav a em {
+    color: #2d71ed;
+    line-height: 0.18rem;
+    text-align: left;
+    padding-top: 0.2rem;
+    font-size: 0.16rem;
+}
+.subNav a em {
+    float: left;
+    margin-left: 0.17rem;
+}
+.subNav {
+    border-bottom: 1px solid #252c3e;
+    height: 50px;
+    line-height: 50px;
+}
+
+.navContent, .costBox, .historyBox {
+    color: #fff;
+    padding-top: 0.17rem !important;
+    padding-bottom: 0.17rem !important;
+    margin-left: 0.17rem !important;
+    margin-right: 0.17rem !important;
+    height: auto;
+    overflow: hidden;
+}
+
+.product_para{
+	table{
+		margin-top:0.25rem;
+	}
 }

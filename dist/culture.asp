@@ -96,7 +96,7 @@ rs.close
 				<ul id="accordion" class="accordion">
 					<li>
 						<div class="subNav business_activityNav">
-							<a href="#">
+							<a href="javascript:;">
 								<em>五项基本原则<span>Five Principles</span></em>
 								<i class="contraction">展开</i>
 							</a>
@@ -113,7 +113,7 @@ rs.close
 					</li>
 					<li>
 						<div class="subNav business_activityNav">
-							<a href="#">
+							<a href="javascript:;">
 								<em>A.O.Smith卓越管理人员胜利力模型<span>Victory Force Model Management Excellence</span></em>
 								<i class="contraction">展开</i>
 							</a>
@@ -139,7 +139,7 @@ rs.close
 					</li>
 					<li>
 						<div class="subNav business_activityNav">
-							<a href="#">
+							<a href="javascript:;">
 								<em>用心管理原则<span>Hear Principles</span></em>
 								<i class="contraction">展开</i>
 							</a>
@@ -164,7 +164,7 @@ rs.close
 					</li>
 					<li>
 						<div class="subNav business_activityNav">
-							<a href="#">
+							<a href="javascript:;">
 								<em>ASTAR项目<span>ASTAR Program</span></em>
 								<i class="contraction">展开</i>
 							</a>
@@ -191,7 +191,7 @@ rs.close
 					</li>
 					<li>
 						<div class="subNav business_activityNav">
-							<a href="#">
+							<a href="javascript:;">
 								<em>充满激情的各种活动<span>Activites</span></em>
 								<i class="contraction">展开</i>
 							</a>
