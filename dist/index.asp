@@ -12,7 +12,8 @@ cateid_d1=0
     <div class="swiper-container" id="swiper0">
         <div class="swiper-wrapper">
             <div class="swiper-slide"><a href="javascript:;"><img src="images/banner1.jpg" alt=""></a></div>
-            <div class="swiper-slide"><a href="javascript:;"><img src="images/banner2.jpg" alt=""></a></div>            
+            <div class="swiper-slide"><a href="javascript:;"><img src="images/banner2.jpg" alt=""></a></div>    
+            <div class="swiper-slide"><a href="javascript:;"><img src="images/banner3.jpg" alt=""></a></div>        
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination swiper-pagination-white" id="swiper-pagination_0"></div>
@@ -41,7 +42,7 @@ cateid_d1=0
     </div>	
 
 
-	<div class="subtit">成功案列</div>
+	<div class="subtit">成功案例</div>
 	<div class="swiper-container" id="swiper3">
         <div class="swiper-wrapper">
             <div class="swiper-slide"><a href="<%=companyurl_db(25)%>"><img src="images/anli1.jpg" alt=""></a></div>
