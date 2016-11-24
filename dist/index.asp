@@ -11,8 +11,8 @@ cateid_d1=0
 <!-- Swiper -->
     <div class="swiper-container" id="swiper0">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><a href="javascript:;"><img src="images/banner1.jpg" alt=""></a></div>
-            <div class="swiper-slide"><a href="javascript:;"><img src="images/banner2.jpg" alt=""></a></div>    
+            <div class="swiper-slide"><a href="javascript:;"><img src="images/banner2.jpg" alt=""></a></div>
+            <div class="swiper-slide"><a href="javascript:;"><img src="images/banner1.jpg" alt=""></a></div>    
             <div class="swiper-slide"><a href="javascript:;"><img src="images/banner3.jpg" alt=""></a></div>        
         </div>
         <!-- Add Pagination -->
@@ -22,8 +22,8 @@ cateid_d1=0
 
 	<div class="swiper-container" id="swiper1">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><a href="<%=companyurl_db(23)%>"><img src="images/fa1-0.jpg" alt=""></a></div>
-            <div class="swiper-slide"><a href="<%=companyurl_db(23)%>"><img src="images/fa1.jpg" alt=""></a></div>            
+            <div class="swiper-slide"><a href="product_recommand.asp?id=23"><img src="images/fa1-0.jpg" alt=""></a></div>
+            <div class="swiper-slide"><a href="product_recommand.asp?id=23"><img src="images/fa1.jpg" alt=""></a></div>            
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination swiper-pagination-white" id="swiper-pagination_1"></div>
@@ -34,8 +34,8 @@ cateid_d1=0
 
 	<div class="swiper-container" id="swiper2">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><a href="<%=companyurl_db(22)%>"><img src="images/fa2-0.jpg" alt=""></a></div>
-            <div class="swiper-slide"><a href="<%=companyurl_db(22)%>"><img src="images/fa2.jpg" alt=""></a></div>            
+            <div class="swiper-slide"><a href="product_recommand2.asp?id=22"><img src="images/fa2-0.jpg" alt=""></a></div>
+            <div class="swiper-slide"><a href="product_recommand2.asp?id=22"><img src="images/fa2.jpg" alt=""></a></div>            
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination swiper-pagination-white" id="swiper-pagination_2"></div>

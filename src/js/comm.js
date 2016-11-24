@@ -21,7 +21,7 @@ if ($("#swiper0").length > 0) {
         pagination: '#swiper-pagination_0',
         paginationClickable: true,
         spaceBetween: 30,
-        autoplay: 2500,
+        //autoplay: 2500,
         autoplayDisableOnInteraction: false
     });
     var swiper1 = new Swiper('#swiper1', {
