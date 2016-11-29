@@ -67,3 +67,40 @@ $(".menu").on("click", function() {
 });
 });
 
+var isgo = true;
+$(window).scroll(function() {
+    if ($(window).scrollTop() + 230 >= $(document).height() - $(window).height()) {
+        //alert("滚动到底部啦！");
+        if ($("#getmore").length > 0 && isgo == true) {
+
+            getmorenews();
+        }
+        if ($("#getmorepic").length > 0 && isgo == true) {
+
+            //getmorepic();
+        }
+
+    }
+});
+$("#getmore").on("click", getmorenews);
+
+function getmorenews() {
+    isgo = false;
+    var page = $("#getmore").attr("data-page");
+    var cateid = $("#getmore").attr("data-cateid");
+    var pagecount = $("#getmore").attr("data-pagecount");
+    //alert(page);
+    $.get("getmorenews.asp", {
+        "nid": cateid,
+        "page": page
+    }, function(data) {
+        //alert(data);
+        $("ul.newslist").append(data);
+        $("#getmore").attr("data-page", page * 1 + 1);
+        if (page + 1 >= pagecount) {
+            $("#getmore").parent().remove();
+        }
+        ;
+        isgo = true;
+    });
+}

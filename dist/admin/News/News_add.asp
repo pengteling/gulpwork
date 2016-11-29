@@ -55,15 +55,7 @@ function SetDropDownPic(url){
       <td height="22" align="center" class="tr_southidc">信息标题：</td>
       <td colspan="2" width="80%"><input name="title" type="text" class="input" size="30">
         
-        颜色：<input name="color" id="color_t" class="input" size="10"/>
         
-        <img src="../images/color.png" id="pickcolor">
-        <script type="text/javascript">
-    $(function(){
-        $.showcolor('pickcolor','color_t');//第一参数：按钮ID，第二参数： 文本框ID
-       
-    })
-</script>
             </td>
     </tr>
     <tr>

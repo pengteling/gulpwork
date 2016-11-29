@@ -46,9 +46,13 @@ cateid_d1=0
 	<div class="swiper-container" id="swiper3">
         <div class="swiper-wrapper">
             <div class="swiper-slide"><a href="<%=companyurl_db(25)%>"><img src="images/anli1.jpg" alt=""></a></div>
-            <div class="swiper-slide"><a href="<%=companyurl_db(26)%>"><img src="images/anli2.jpg" alt=""></a></div>
-            <div class="swiper-slide"><a href="<%=companyurl_db(27)%>"><img src="images/anli3.jpg" alt=""></a></div>
-            <div class="swiper-slide"><a href="<%=companyurl_db(28)%>"><img src="images/anli4.jpg" alt=""></a></div>
+            <div class="swiper-slide"><a href="<%=companyurl_db(25)%>"><img src="images/anli2.jpg" alt=""></a></div>
+            <div class="swiper-slide"><a href="<%=companyurl_db(25)%>"><img src="images/anli3.jpg" alt=""></a></div>
+            <div class="swiper-slide"><a href="<%=companyurl_db(26)%>"><img src="images/anli4.jpg" alt=""></a></div>
+            <div class="swiper-slide"><a href="<%=companyurl_db(26)%>"><img src="images/anli5.jpg" alt=""></a></div>
+            <div class="swiper-slide"><a href="<%=companyurl_db(26)%>"><img src="images/anli6.jpg" alt=""></a></div>
+            <div class="swiper-slide"><a href="<%=companyurl_db(27)%>"><img src="images/anli7.jpg" alt=""></a></div>
+            
            
         </div>
         <!-- Add Pagination -->

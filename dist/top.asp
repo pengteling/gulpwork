@@ -16,6 +16,13 @@
 	<script src="js/swiper.min.js"></script>
 	<script src="js/comm.js"></script>	
 	<title><%=curpageTitle%></title>
+   <style>
+  /* 2016 11 28 custom */
+  .xiala ul.parentmenu>li a, .xiala ul.submenu1 li a {
+      font-size: .28rem;
+      color: #aeb6d0;
+  }
+  </style>
 </head>
 
 <header>

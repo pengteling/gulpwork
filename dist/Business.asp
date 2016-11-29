@@ -37,7 +37,7 @@ rs.close
 
 
 <%
-pagenum = 20
+pagenum = 8
 Easp.Db.PageSize = pagenum
 Easp.Var("page") =1
 k=1
@@ -45,10 +45,17 @@ Set NewsListRs = Easp.Db.GetRS("select * from news_c where isdel=false and passe
 while not NewsListRs.eof
 
 %>
-<li class="newsitem"><a href="<%=infoURL(NewsListRs("staticUrl"),NewsListRs("dynamicUrl"),supportHtml)%>">
-<img src="<%=newslistRs("defaultpicurl")%>">
-<h2 class="smalltit"><%=NewsListRs("title")%></h2>
-<em><%=leftstr(NewsListRs("content_zy"),40)%></em>
+<li class="newsitem"><a href="<%=infoURL(NewsListRs("staticUrl"),NewsListRs("dynamicUrl"),supportHtml)%>" style=" display: flex;
+    justify-content:center;
+    align-items:Center;">
+<img src="<%=Thumb_getUrl(newslistRs("defaultpicurl"),210,144)%>" style="float:none;">
+
+<h2 class="smalltit" style="display: inline-block; width: 4.5rem; padding-top: 0; "><%=NewsListRs("title")%></h2>
+<!-- <em>
+<pre>
+<%=leftstr(NewsListRs("content_zy"),40)%>
+</pre>
+</em> -->
 
 </a></li>
 <%

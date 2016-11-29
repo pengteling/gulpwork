@@ -84,9 +84,11 @@ rs.close
         <div class="maincontent" >
           <div class="newscenter">
             <h1 class="newscentertitle"><%=newstitle%></h1>
+            <%if cateid_d1<>24 then%>
             <div class="laiyuan">
               <div class="author"><%=posttime%></div>
             </div>
+            <%end if%>
           </div>
           <div class="newscontent">
             <%=News_Content%>

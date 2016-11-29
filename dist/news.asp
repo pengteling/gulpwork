@@ -37,7 +37,7 @@ rs.close
 
 
 <%
-pagenum = 20
+pagenum = 8
 Easp.Db.PageSize = pagenum
 Easp.Var("page") =1
 k=1

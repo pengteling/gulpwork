@@ -22,7 +22,7 @@ rs.close
 <!--#include virtual="/lmenu.asp"-->
 
 <%
-pagenum = 20
+pagenum = 8
 Easp.Db.PageSize = pagenum
 'Easp.Var("page") = 1
 k=1
@@ -30,17 +30,32 @@ Set NewsListRs = Easp.Db.GetRS("select * from news_c where isdel=false and passe
 while not NewsListRs.eof
 
 %>
-<li class="newsitem"><a href="<%=infoURL(NewsListRs("staticUrl"),NewsListRs("dynamicUrl"),supportHtml)%>">
-<img src="<%=newslistRs("defaultpicurl")%>">
-<h2 <%if cateid_d1=24 then%>class="smalltit"<%end if%>><%=NewsListRs("title")%></h2>
-<em>
 <%if cateid_d1=24 then%>
+<li class="newsitem"><a href="<%=infoURL(NewsListRs("staticUrl"),NewsListRs("dynamicUrl"),supportHtml)%>" style=" display: flex;
+    justify-content:center;
+    align-items:Center;">
+<img src="<%=Thumb_getUrl(newslistRs("defaultpicurl"),210,144)%>" style="float:none;">
+
+<h2 class="smalltit" style="display: inline-block; width: 4.5rem; padding-top: 0; "><%=NewsListRs("title")%></h2>
+<!-- <em>
+<pre>
 <%=leftstr(NewsListRs("content_zy"),40)%>
-<%else%>
-<%=NewsListRs("posttime")%>
-<%end if%></em>
+</pre>
+</em> -->
 
 </a></li>
+
+<%else%>
+
+<li class="newsitem"><a href="<%=infoURL(NewsListRs("staticUrl"),NewsListRs("dynamicUrl"),supportHtml)%>">
+<img src="<%=newslistRs("defaultpicurl")%>">
+<h2><%=NewsListRs("title")%></h2>
+<em><%=NewsListRs("posttime")%></em>
+
+</a></li>
+
+<%end if%>
+
 <%
 
 k=k+1
