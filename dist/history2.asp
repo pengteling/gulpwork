@@ -65,11 +65,11 @@ rs.close
 				</div>
 				<div class="swiper-container" id="swiper-container1" style="margin-top: 0.85rem;">
 					<div class="swiper-wrapper">
-						<div class="swiper-slide yearsTime"><img src="images/history/cq-1.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/cq-2.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/cq-3.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/cq-4.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/cq-5.jpg" /></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/cq-1.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/cq-2.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/cq-3.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/cq-4.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/cq-5.jpg"  class="swiper-lazy"/></div>
 						
 					</div>
 				</div>
@@ -77,6 +77,9 @@ rs.close
 				<script>
 					var mySwiper = new Swiper('#swiper-container1', {
 						slidesPerView: 1,
+						 preloadImages: false,
+        // Enable lazy loading
+        lazyLoading: true,
 						onSlideChangeEnd:function(swiper){
 							Swiper.slideTo(mySwiper.activeIndex);
 							$("#swiper-container2 li div").each(function(){

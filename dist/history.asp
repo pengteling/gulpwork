@@ -115,34 +115,37 @@ rs.close
 				</div>
 				<div class="swiper-container" id="swiper-container1">
 					<div class="swiper-wrapper">
-						<div class="swiper-slide yearsTime"><img src="images/history/1874.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/1906.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/1921.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/1928.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/1929.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/1930.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/1936.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/1970.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/1974.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/1985.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/1992.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/1998.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/2004.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/2008.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/2009.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/2009-2.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/2010.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/2012.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/2012-2.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/2013.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/2013-2.jpg" /></div>
-						<div class="swiper-slide yearsTime"><img src="images/history/2014.jpg" /></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/1874.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/1906.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/1921.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/1928.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/1929.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/1930.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/1936.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/1970.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/1974.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/1985.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/1992.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/1998.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/2004.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/2008.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/2009.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/2009-2.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/2010.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/2012.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/2012-2.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/2013.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/2013-2.jpg"  class="swiper-lazy"/></div>
+						<div class="swiper-slide yearsTime"><img data-src="images/history/2014.jpg"  class="swiper-lazy"/></div>
 					</div>
 				</div>
 				<!-- Initialize Swiper -->
 				<script>
 					var mySwiper = new Swiper('#swiper-container1', {
 						slidesPerView: 1,
+						  preloadImages: false,
+        // Enable lazy loading
+        lazyLoading: true,
 						onSlideChangeEnd:function(swiper){
 							Swiper.slideTo(mySwiper.activeIndex);
 							$("#swiper-container2 li div").each(function(){

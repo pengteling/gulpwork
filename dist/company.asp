@@ -37,9 +37,10 @@ rs.close
  
       
         <div class="maincontent" >
+        <%if cateid<>49 then%>
         <h1 class="comtitle"><%=Com_title%></h1>
-          
-          <div class="newscontent" style="color:#cccfd9;">
+          <%end if%>
+          <div class="newscontent" style="color:#cccfd9;<%if cateid=49 then response.write "padding:0"%>">
              <%=Com_Content%>
 
              

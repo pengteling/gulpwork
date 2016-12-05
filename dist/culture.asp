@@ -31,7 +31,15 @@ rs.close
 %>
 <!--#include virtual="/lmenu.asp"-->
 <!--#include virtual="/top.asp"-->
-
+<style>
+.business_activityNav a em {
+    color: #2d71ed;
+    line-height: .18rem;
+    text-align: left;
+    padding-top: 12px;
+    font-size: .16rem;
+}
+</style>
 <section id="container">
 			<div class="contentBox">
 				<div class="historyBox">
