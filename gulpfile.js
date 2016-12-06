@@ -1,8 +1,10 @@
 //imagemin-pngquant 最新版本会报错 安装时后加@4   npm i imagemin-pngquant@4
 //
 
-//CSS   npm i gulp-sass gulp-autoprefixer gulp-clean-css
+//CSS   npm i gulp-sass gulp-autoprefixer gulp-clean-css 
 //js  gulp-uglify
+// postcss postcss-cssnext cssgrace   autoprefixer
+//gulp-babel gulp-plumber babel-preset-es2015
 
 var gulp = require('gulp');
 // npm i browser-sync
@@ -24,26 +26,47 @@ gulp.task('browser-sync', function() {
 
 
 
-var autoprefixer = require('gulp-autoprefixer');
+//var autoprefixer = require('gulp-autoprefixer');
 var sass = require('gulp-sass');
 var cleanCSS = require('gulp-clean-css');
 
+//var autoprefixer = require('autoprefixer');
+var cssgrace  = require('cssgrace');
+var cssnext  = require('cssnext');
+var postcss = require("gulp-postcss");
+var autoprefixer = require('autoprefixer');
 gulp.task('css', function() {
-    gulp.src('./src/sass/*.scss')
+
+    var processors = [
+        autoprefixer({
+            browsers: ['last 3 version'],
+            cascade: false,
+            remove: false,
+            flexbox:false
+        }),
+        cssnext()
+        ,
+        cssgrace
+    ];
+
+    gulp.src('./src/sass/*.scss') //sass文件直接处理
         .pipe(sass())
-        .pipe(autoprefixer({
-            browsers: ['> 1%', 'last 3 versions'],
-            flexbox: 'false',
-            cascade: false
-        }))
+        // .pipe(autoprefixer({
+        //     browsers: ['> 1%', 'last 3 versions'],
+        //     flexbox: 'false',
+        //     cascade: false
+        // }))
+        .pipe(postcss(processors))
         .pipe(cleanCSS())
-        .pipe(gulp.dest('dist/css'))
+        .pipe(gulp.dest('./dist/css'))
         //.pipe(browserSync.stream());
         .pipe(browserSync.reload({
             stream: true
         }));
-    gulp.src('./src/css/*.css')
-        .pipe(gulp.dest('dist/css'))
+
+    gulp.src('./src/css/*.css')  //复制CSS文件直接到dist
+    .pipe(postcss(processors))
+        //.pipe(gulp.dest('./dist/css'))
         .pipe(browserSync.reload({
             stream: true
         }));
@@ -68,9 +91,16 @@ gulp.task('html', function() {
 
 
 var uglify = require('gulp-uglify');
+const babel = require('gulp-babel');
+const plumber = require('gulp-plumber'); //防止gulp退出进程
+
 gulp.task('js', function() {
     return gulp.src('src/js/comm.js')
         //.pipe(uglify())
+        .pipe(plumber())
+        .pipe(babel({
+            presets: ['es2015']
+        }))
         .pipe(gulp.dest('dist/js'))
         .pipe(browserSync.reload({
             stream: true
@@ -100,3 +130,16 @@ gulp.task('image', () => gulp.src('./src/images/**/*')
 );
 
 
+
+
+
+
+
+// gulp.task('es6to5', () => {
+//     return gulp.src('src/**/*.js')
+//         .pipe(plumber())
+//         .pipe(babel({
+//             presets: ['es2015']
+//         }))
+//         .pipe(gulp.dest('dist'));
+// });
