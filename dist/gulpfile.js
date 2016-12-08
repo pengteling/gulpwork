@@ -16,10 +16,11 @@ gulp.task('compass', function() {
 });
 
 
+
 var watch = require('gulp-watch');
 gulp.task('watch', function() {
     gulp.watch('./sass/*.scss', ['compass']);
-})
+});
 
 
 var uglify = require('gulp-uglify');
