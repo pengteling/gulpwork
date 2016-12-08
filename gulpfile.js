@@ -45,8 +45,8 @@ gulp.task('css', function() {
             flexbox:false
         }),
         cssnext()
-        ,
-        cssgrace
+        // ,
+        // cssgrace
     ];
 
     gulp.src('./src/sass/*.scss') //sass文件直接处理
